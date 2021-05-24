@@ -1,0 +1,17 @@
+micronaut:
+  application:
+    name: register
+
+server:
+  port: 8081
+
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attepts: 10
+  channels:
+    keymanager:
+      address: "localhost:50051"
+      plaintext: true
+      max-retry-attepts: 5
