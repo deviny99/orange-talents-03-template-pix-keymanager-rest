@@ -6,19 +6,11 @@
 - [Micronaut Guides](https://guides.micronaut.io/index.html)
 ---
 
-## Feature testcontainers documentation
+## Feature http-client documentation
 
-- [https://www.testcontainers.org/](https://www.testcontainers.org/)
-
-## Feature hamcrest documentation
-
-- [https://hamcrest.org/JavaHamcrest/](https://hamcrest.org/JavaHamcrest/)
+- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
 
 ## Feature mockito documentation
 
 - [https://site.mockito.org](https://site.mockito.org)
-
-## Feature http-client documentation
-
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
 

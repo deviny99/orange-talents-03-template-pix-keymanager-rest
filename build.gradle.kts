@@ -17,6 +17,7 @@ repositories {
 }
 
 micronaut {
+    runtime("netty")
     testRuntime("junit5")
     processing {
         incremental(true)
@@ -33,13 +34,14 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
-    testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("org.testcontainers:testcontainers")
     implementation("io.micronaut:micronaut-validation")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-    testImplementation("org.hamcrest:hamcrest")
+    runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
+    testImplementation("org.mockito:mockito-inline:3.8.0")
     testImplementation("org.mockito:mockito-core")
+
 }
+
 
 application {
     mainClass.set("br.com.zup.ApplicationKt")
