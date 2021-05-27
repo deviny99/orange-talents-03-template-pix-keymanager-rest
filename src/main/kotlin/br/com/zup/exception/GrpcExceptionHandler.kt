@@ -24,7 +24,7 @@ class GrpcExceptionHandler : ExceptionHandler<StatusRuntimeException,MutableHttp
             Pair("path",request?.uri),
             Pair("timestamp",LocalDateTime.now().toString()),
             Pair("status",this.convertStatus(exception.status).code),
-            Pair("message", exception.status.description) ,
+            Pair("message", exception.status.description),
             Pair("fields",exception.violations()),
             Pair("error",this.convertStatus(exception.status))
         )
@@ -53,6 +53,7 @@ class GrpcExceptionHandler : ExceptionHandler<StatusRuntimeException,MutableHttp
     private fun StatusRuntimeException.violations(): List<Pair<String, String>>? {
 
         if (StatusProto.fromThrowable(this)?.detailsList!!.isNotEmpty()){
+
             val details = StatusProto.fromThrowable(this)
                 ?.detailsList?.get(0)!!
                 .unpack(BadRequest::class.java)

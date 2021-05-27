@@ -2,11 +2,12 @@ package br.com.zup.chave.dto
 
 import br.com.zup.ChaveRequest
 import io.micronaut.core.annotation.Introspected
+import java.util.*
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Size
 
 @Introspected
-data class ChavePixRequest(@field:NotBlank val clienteID:String?,
+data class ChavePixRequest(@field:NotBlank val clienteId:UUID?,
                            @field:NotBlank @Size(max = 77,message = "") val chave:String?,
                            val tipoChave: ChaveType?,
                            @field:NotBlank val tipoConta: ContaType?) {
@@ -20,7 +21,7 @@ data class ChavePixRequest(@field:NotBlank val clienteID:String?,
 
         return ChaveRequest.newBuilder()
             .setChave(this.chave)
-            .setIdClient(this.clienteID)
+            .setIdClient(this.clienteId.toString())
             .setTipo(keyType.convertProto)
             .setTipoConta(this.tipoConta!!.convertProto)
             .build()

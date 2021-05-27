@@ -71,8 +71,6 @@ message PixDetalhes{
 
 }
 
-
-
 message Instituicao{
   string nome = 1;
   string agencia = 2;
